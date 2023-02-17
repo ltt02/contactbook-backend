@@ -9,7 +9,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use("/api/contact", contactsRouter);
+app.use("/api/contacts", contactsRouter);
 
 app.use((req, res, next) => {
     return next(new ApiError(404, "Resource not found"));

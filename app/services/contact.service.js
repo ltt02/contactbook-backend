@@ -45,7 +45,7 @@ class ContactService {
     async findById(id) {
         return await this.Contact.findOne({
             _id: ObjectId.isValid(id) ? new ObjectId(id) : null,
-        }).value;
+        });
     }
 
     async update(id, payload) {
@@ -62,7 +62,7 @@ class ContactService {
     }
 
     async delete(id) {
-        const result = await this.ContactService.findOneAndDelete({
+        const result = await this.Contact.findOneAndDelete({
             _id: ObjectId.isValid(id) ? new ObjectId(id) : null,
         });
         return result.value;
